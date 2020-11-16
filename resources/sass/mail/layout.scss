@@ -1,0 +1,25 @@
+.wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(
+        to right, 
+        theme('colors.blue.500') 0%,
+        theme('colors.purple.500') 100%
+    );
+    background-size: 100% 400px;
+    background-repeat: no-repeat;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}

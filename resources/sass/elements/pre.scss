@@ -1,0 +1,39 @@
+pre {
+    padding: 1rem;
+    overflow: auto;
+    max-height: 16rem;
+    text-align: justify;
+    color: theme('colors.grey.700');
+    border-radius: theme('borderRadius.default');
+    background-color: theme('colors.purple.200');
+
+    @screen md {
+        padding: 1.5rem;
+    }
+}
+
+.pre-holder {
+    position: relative;
+
+    .pre-copy {
+        top: 1rem;
+        opacity: 0;
+        z-index: 5;
+        right: 1rem;
+        position: absolute;
+        padding: 0.25rem 0.75rem;
+        transform: translateY(-30%);
+        color: theme('colors.white');
+        font-size: theme('fontSize.xs');
+        transition: all 150ms ease-in-out;
+        background-color: theme('colors.purple.500');
+        border-radius: theme('borderRadius.default');
+    }
+
+    &:hover {
+        .pre-copy {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

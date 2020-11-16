@@ -1,0 +1,15 @@
+.footer {
+    padding: 0;
+    width: 570px;
+    margin: 0 auto;
+    text-align: center;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 570px;
+}
+
+.footer p {
+    font-size: 12px;
+    text-align: center;
+    color: theme('colors.grey.600');
+}

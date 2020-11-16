@@ -1,0 +1,22 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes highlight {
+    0% {
+        color: theme('colors.white');
+        background: theme('colors.purple.500');
+    }
+
+    100% {
+        color: inherit;
+        background: inherit;
+        // background: transparent;
+    }
+}

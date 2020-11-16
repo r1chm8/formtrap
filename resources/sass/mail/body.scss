@@ -1,0 +1,22 @@
+.body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.inner-body {
+    padding: 0;
+    width: 570px;
+    margin: 0 auto;
+    border-radius: 3px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 570px;
+    background-color: theme('colors.white');
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+}

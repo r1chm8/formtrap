@@ -1,0 +1,101 @@
+.plan {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    color: theme('colors.black');
+    border: 1px solid theme('colors.grey.400');
+
+    &:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    &:first-child {
+        border-radius: theme('borderRadius.default') theme('borderRadius.default') 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 theme('borderRadius.default') theme('borderRadius.default');
+    }
+
+    &.active {
+        z-index: 5;
+        border-color: theme('colors.purple.500');
+        box-shadow: inset 0px 0px 0px 1px theme('colors.purple.500');
+
+        .plan-banner {
+            background-color: theme('colors.purple.500');
+
+            &:before {
+                border-bottom-color: theme('colors.purple.500');
+            }
+        }
+    }
+    
+    &:hover {
+        background-color: theme('colors.purple.200');
+    }
+
+    .icon {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        position: absolute;
+        background-color: theme('colors.purple.500');
+        border-radius: theme('borderRadius.full');
+    }
+}
+
+.plan-banner {
+    left: 50%;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    padding: 0.25rem 0.75rem;
+    color: theme('colors.white');
+    transform: translate(-50%, 50%);
+    font-size: theme('fontSize.xs');
+    transition: all 200ms ease-in-out;
+    border-radius: theme('borderRadius.full');
+    background-color: theme('colors.green.500');
+
+    &:before {
+        width: 0;
+        height: 0;
+        top: -5px;
+        left: 50%;
+        content: '';
+        position: absolute;
+        transform: translateX(-50%);
+        transition: all 200ms ease-in-out;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid theme('colors.green.500');
+    }
+}
+
+@screen md {
+    .plans {
+        display: flex;
+    }
+
+    .plan {
+        &:not(:first-child) {
+            margin-top: 0;
+            margin-left: -1px;
+        }
+
+        &:first-child {
+            border-radius: theme('borderRadius.default') 0 0 theme('borderRadius.default');
+        }
+
+        &:last-child {
+            border-radius: 0 theme('borderRadius.default') theme('borderRadius.default') 0;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.content {
+    color: theme('colors.grey.600');
+    line-height: theme('lineHeight.loose');
+    
+    li + li {
+        margin-top: 0.25rem;
+    }
+    
+    p,
+    dl,
+    ol,
+    ul,
+    hr,
+    pre,
+    table,
+    blockquote {
+        &:not(:last-child) {
+            margin-bottom: theme('margin.4');
+        }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:not(:last-child) {
+            margin-bottom: theme('margin.2');
+        }
+    }
+
+    hr {
+        margin-top: 0;
+    }
+
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}

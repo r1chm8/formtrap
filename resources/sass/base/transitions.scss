@@ -1,0 +1,28 @@
+.none-leave-active {
+    display: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 250ms;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+    transition: all 250ms;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    opacity: 0;
+    transform: translateY(10%);
+}
+
+.flip-list-move {
+    transition: all 200ms;
+}

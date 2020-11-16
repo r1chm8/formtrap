@@ -1,0 +1,27 @@
+.action-bar {
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+
+    > li {
+        > .action-bar-item {
+            display: block;
+            padding: 0.5rem;
+            color: theme('colors.grey.600');
+            border-radius: theme('borderRadius.default');
+
+            &:hover {
+                color: theme('colors.purple.500');
+                background-color: theme('colors.grey.300');
+            }
+        }
+    }
+
+    @screen md {
+        > li {
+            > .action-bar-item {
+                margin: 0 0.25rem;
+            }
+        }
+    }
+}

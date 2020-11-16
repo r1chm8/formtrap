@@ -1,0 +1,28 @@
+.toasted {
+    &.default {
+        color: theme('colors.white');
+        box-shadow: theme('boxShadow.md');
+        border-radius: theme('borderRadius.default');
+
+        a {
+            text-decoration: underline;
+            color: theme('colors.white');
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.success {
+            background-color: theme('colors.green.500');
+        }
+
+        &.error {
+            background-color: theme('colors.red.500');
+        }
+
+        &:not(.error):not(.success) {
+            @extend %bg-blue-500-to-right-purple-500;
+        }
+    }
+}

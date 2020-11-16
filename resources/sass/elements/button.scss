@@ -1,0 +1,239 @@
+$button-colours: (
+    'red-500': ('red.500', 'white', 'red.600', 'grey.200')
+);
+
+.button {
+    @include control;
+    cursor: pointer;
+    padding: 0 1rem;
+    border-width: 1px;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: none;
+    justify-content: center;
+    color: theme('colors.white');
+    font-size: theme('fontSize.sm');
+    font-weight: theme('fontWeight.normal');
+    border-color: theme('colors.purple.500');
+    border-radius: theme('borderRadius.default');
+    background-color: theme('colors.purple.500');
+
+    @screen md {
+        padding: 0 2rem;
+    }
+
+    .icon {
+        &:first-child:not(:last-child) {
+            margin-right: 0.1875em;
+            margin-left: calc(-0.5em - 2px);
+        }
+        
+        &:last-child:not(:first-child) {
+            margin-left: 0.1875em;
+            margin-right: calc(-0.5em - 2px);
+        }
+
+        &:first-child:last-child {
+            margin-left: calc(-0.5em - 2px);
+            margin-right: calc(-0.5em - 2px);
+        }
+    }
+
+    &:hover {
+        color: theme('colors.white');
+        border-color: theme('colors.purple.600');
+        background-color: theme('colors.purple.600');
+    }
+
+        &.outlined {
+        background-color: transparent;
+        color: theme('colors.purple.500');
+
+        &:hover {
+            color: theme('colors.white');
+            background-color: theme('colors.purple.500');
+        }
+    }
+
+    &.static {
+        pointer-events: none;
+        color: theme('colors.grey.500');
+        border-color: theme('colors.grey.600');
+        background-color: theme('colors.grey.700');
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        border-color: theme('colors.purple.500');
+        background-color: theme('colors.purple.500');
+    }
+
+    &.loading {
+        color: transparent;
+        pointer-events: none;
+
+        &:after {
+            content: '';
+            width: 1rem;
+            height: 1rem;
+            display: block;
+            position: absolute;
+            border-radius: 100px;
+            top: calc(50% - (1rem / 2));
+            left: calc(50% - (1rem / 2));
+            border: 2px solid transparent;
+            animation: spin 500ms infinite linear;
+            border-left-color: theme('colors.white');
+            border-bottom-color: theme('colors.white');
+        }
+    }
+
+    @each $name, $colors in $button-colours {
+        &.#{$name} {
+            color: theme('colors.#{nth($colors, 2)}');
+            border-color: theme('colors.#{nth($colors, 1)}');
+            background-color: theme('colors.#{nth($colors, 1)}');
+    
+            &:hover {
+                color: theme('colors.#{nth($colors, 4)}');
+                border-color: theme('colors.#{nth($colors, 3)}');
+                background-color: theme('colors.#{nth($colors, 3)}');
+            }
+
+            &[disabled] {
+                border-color: transparent;
+                background-color: theme('colors.#{nth($colors, 1)}');
+            }
+
+            &.loading {
+                &:after {
+                    border-left-color: theme('colors.#{nth($colors, 2)}');
+                    border-bottom-color: theme('colors.#{nth($colors, 2)}');
+                }
+            }
+
+            &.outlined {
+                color: theme('colors.#{nth($colors, 2)}');
+                border-color: theme('colors.#{nth($colors, 3)}');
+                
+                &:hover {
+                    color: theme('colors.#{nth($colors, 2)}');
+                    background-color: theme('colors.#{nth($colors, 3)}');
+                }
+            }
+        }
+    }
+
+    &.grey-400 {
+        color: theme('colors.grey.700');
+        border-color: theme('colors.grey.200');
+        background-color: theme('colors.grey.200');
+
+        &:hover {
+            color: theme('colors.grey.700');
+            border-color: theme('colors.grey.300');
+            background-color: theme('colors.grey.300');
+        }
+
+        &.outlined {
+            background-color: transparent;
+            color: theme('colors.grey.700');
+            
+            &:hover {
+                color: theme('colors.grey.700');
+                border-color: theme('colors.grey.300');
+                background-color: theme('colors.grey.300');
+            }
+
+            &.loading {
+                &:after {
+                    border-left-color: theme('colors.grey.700');
+                    border-bottom-color: theme('colors.grey.700');
+                }
+            }
+        }
+
+        &[disabled] {
+            opacity: 0.5;
+            background-color: theme('colors.grey.200');
+        }
+
+        &.loading {
+            color: transparent;
+
+            &:after {
+                border-left-color: theme('colors.grey.700');
+                border-bottom-color: theme('colors.grey.700');
+            }
+        }
+    }
+    
+    &.primary {
+        border: none;
+        color: theme('colors.white');
+
+        background: linear-gradient(
+            to right, 
+            theme('colors.blue.500') 0%,
+            theme('colors.purple.500') 100%
+        );
+
+        &:hover {
+            background: linear-gradient(
+                to right, 
+                theme('colors.blue.600') 0%,
+                theme('colors.purple.600') 100%
+            );
+        }
+
+        &.loading {
+            color: transparent;
+
+            &:after {
+                border-left-color: theme('colors.white');
+                border-bottom-color: theme('colors.white');
+            }
+        }
+    }
+
+    &.small {
+        height: 2.25rem;
+        padding: 0 0.75rem;
+    }
+}
+
+.button-group {
+    display: flex;
+
+    .button {
+        flex-grow: 1;
+
+        &:hover {
+            z-index: 2
+        }
+
+        &:focus,
+        &:active {
+            z-index: 3;
+
+            &:hover {
+                z-index: 4
+            }
+        }
+
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+
+        &:first-child {
+            border-left: 0;
+            border-radius: 0 0 0 theme('borderRadius.default');
+        }
+
+        &:last-child {
+            border-right: 0;
+            border-radius: 0 0 theme('borderRadius.default') 0;
+        }
+    }
+}

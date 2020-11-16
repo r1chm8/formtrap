@@ -1,0 +1,27 @@
+.loader {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    min-height: 8rem;
+    position: absolute;
+
+    .icon {
+        left: 50%;
+        top: 2.5rem;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+}
+
+.loader-enter-active,
+.loader-leave-active {
+    transition: opacity 125ms;
+}
+
+.loader-enter,
+.loader-leave-to {
+    opacity: 0;
+}

@@ -1,0 +1,131 @@
+$pagination-margin: 0.25rem;
+
+.pagination {
+    flex-wrap: wrap;
+    margin: -#{$pagination-margin};
+}
+
+.pagination,
+.pagination-list {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-previous,
+.pagination-next,
+.pagination-link {
+    @include control;
+    
+    align-items: center;
+    min-width: $control-height;
+    color: theme('colors.grey.600');
+    background-color: theme('colors.white');
+    border-color: theme('colors.grey.400');
+    border-radius: theme('borderRadius.default');
+
+    &:hover {
+        color: theme('colors.purple.500');
+        border-color: theme('colors.purple.500');
+        background-color: theme('colors.purple.200');
+    }
+
+    &:focus {
+        border-color: theme('colors.purple.600');
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        color: theme('colors.grey.500');
+        background-color: theme('colors.white');
+        border-color: theme('colors.grey.400');
+    }
+}
+
+.pagination-previous,
+.pagination-next,
+.pagination-link,
+.pagination-ellipsis {
+    user-select: none;
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    justify-content: center;
+}
+
+.pagination-previous,
+.pagination-next {
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: nowrap;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: $pagination-margin;
+}
+
+.pagination-link {
+    margin: $pagination-margin 0.15rem;
+
+    &.current {
+        color: theme('colors.white');
+        border-color: theme('colors.purple.500');
+        background-color: theme('colors.purple.500');
+    }
+}
+
+.pagination-ellipsis {
+    pointer-events: none;
+    color: theme('colors.grey.400');
+    margin: $pagination-margin 0.15rem;
+}
+
+.pagination-list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+        flex-shrink: 1;
+    }
+}
+
+@screen md {
+    .pagination {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .pagination-list {
+        order: 2;
+        flex-grow: 1;
+        flex-shrink: 1;
+        justify-content: center;
+
+        li {
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+
+    .pagination-link,
+    .pagination-ellipsis {
+        margin: $pagination-margin;
+    }
+
+    .pagination-previous,
+    .pagination-next {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .pagination-previous {
+        order: 1;
+    }
+
+    .pagination-next {
+        order: 3;
+    }
+}

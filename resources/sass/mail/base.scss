@@ -1,0 +1,36 @@
+body, body *:not(html):not(style):not(br):not(tr):not(code) {
+    box-sizing: border-box;
+    font-family: theme('fontFamily.sans');
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    hyphens: auto;
+    line-height: 1.4;
+    -moz-hyphens: auto;
+    -ms-word-break: break-all;
+    -webkit-hyphens: auto;
+    width: 100% !important;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    word-break: break-word;
+    color: theme('colors.grey.700');
+    background-color: theme('colors.grey.200');
+}
+
+p,
+ul,
+ol,
+blockquote {
+    line-height: 1.4;
+    text-align: left;
+}
+
+a {
+    color: theme('colors.purple.500');
+}
+
+a img {
+    border: none;
+}

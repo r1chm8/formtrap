@@ -1,0 +1,46 @@
+.panel-overlay,
+.panel-right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.panel-overlay {
+    width: 100%;
+    z-index: 55;
+    background-color: rgba(#711ca5, 0.4);
+}
+
+.panel-right {
+    width: 90%;
+    z-index: 60;
+    max-width: 20rem;
+}
+
+.panel-content {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.panel-overlay-overlay-enter-active,
+.panel-overlay-overlay-leave-active {
+    transition: opacity 150ms;
+}
+
+.panel-overlay-overlay-enter,
+.panel-overlay-overlay-leave-to {
+    opacity: 0;
+}
+
+.panel-right-enter-active,
+.panel-right-leave-active {
+    transition: all 150ms;
+    transform: translateX(0);
+}
+
+.panel-right-enter,
+.panel-right-leave-to {
+    transform: translateX(100%);
+}

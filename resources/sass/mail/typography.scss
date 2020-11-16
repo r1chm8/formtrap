@@ -1,0 +1,42 @@
+h1 {
+    font-size: 30px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-weight: normal;
+    color: theme('colors.grey.600');
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-weight: normal;
+    color: theme('colors.grey.600');
+}
+
+h3 {
+    font-size: 20px;
+    margin: 0 0 16px;
+    text-align: center;
+    font-weight: normal;
+    color: theme('colors.grey.600');
+}
+
+p {
+    font-size: 14px;
+    margin: 0 0 20px;
+    text-align: center;
+    line-height: 1.5em;
+    color: theme('colors.grey.600');
+}
+
+ul {
+    font-size: 14px;
+    margin: 0 0 20px;
+    padding: 0 0 0 20px;
+    color: theme('colors.grey.600');
+}
+
+img {
+    max-width: 100%;
+}

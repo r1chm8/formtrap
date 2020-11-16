@@ -1,0 +1,14 @@
+.title,
+.subtitle {
+    word-break: break-word;
+}
+
+.title {
+    font-size: theme('fontSize.xl');
+    font-weight: theme('fontWeight.normal');
+}
+
+.subtitle {
+    font-size: theme('fontSize.base');
+    font-weight: theme('fontWeight.semibold');
+}

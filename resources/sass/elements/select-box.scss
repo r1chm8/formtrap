@@ -1,0 +1,24 @@
+.select-box {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    position: relative;
+    border: 1px solid theme('colors.grey.500');
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.sm');
+
+    &.selected {
+        &:before {
+            top: 50%;
+            content: '';
+            left: 0.5rem;
+            width: 0.4rem;
+            height: 0.7rem;
+            position: absolute;
+            background-color: transparent;
+            border-right: 2px solid theme('colors.purple.500');
+            border-bottom: 2px solid theme('colors.purple.500');
+            transform: translate(-60%, calc(-50% - 1px)) rotate(45deg);
+        }
+    }
+}

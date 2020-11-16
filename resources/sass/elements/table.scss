@@ -1,0 +1,83 @@
+.table-style {
+    max-width: calc(100vw - 2rem);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+    .action-bar {
+        > li {
+            > .action-bar-item {
+                color: theme('colors.grey.400');
+            }
+        }
+    }
+
+    &:not(.sorting):not(.sorted) {
+        .tr {
+            &:hover {
+                .hover-show {
+                    visibility: visible;
+                    pointer-events: all;
+                }
+
+                .action-bar {
+                    > li {
+                        > .action-bar-item {
+                            color: theme('colors.grey.600');
+
+                            &:hover {
+                                color: theme('colors.purple.500');
+                                background-color: theme('colors.white');
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:not(.th):not(.hide-hover) {
+                &:hover {
+                    background-image: linear-gradient(
+                        to right, 
+                        theme('colors.blue.300') 0%,
+                        theme('colors.purple.300') 100%
+                    );
+                }
+            }
+        }
+    }
+}
+
+.tr {
+    display: flex;
+    background-color: theme('colors.white');
+    
+    + .tr {
+        border-top: 1px solid theme('colors.grey.300');
+    }
+
+    &.th {
+        font-weight: theme('fontWeight.bold');
+    }
+
+    &.highlight {
+        animation-name: highlight;
+        animation-duration: 750ms;
+    }
+
+    &.ghost {
+        background-image: linear-gradient(
+            to right, 
+            theme('colors.blue.300') 0%,
+            theme('colors.purple.300') 100%
+        );
+    }
+
+    .hover-show {
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.cell {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}

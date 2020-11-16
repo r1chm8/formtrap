@@ -1,0 +1,37 @@
+.top-navigation {
+    display: flex;
+
+    > li {
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        > a {
+            display: flex;
+            width: 2.75rem;
+            height: 2.75rem;
+            align-items: center;
+            justify-content: center;
+            color: theme('colors.white');
+            border-radius: theme('borderRadius.default');
+
+            &:hover {
+                background-color: theme('colors.purple.700');
+            }
+
+            &.active {
+                background-color: theme('colors.purple.700');
+            }
+        }
+    }
+
+    @screen md {
+        > li {
+            > a {
+                width: auto;
+                height: auto;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}

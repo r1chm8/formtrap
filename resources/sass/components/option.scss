@@ -1,0 +1,57 @@
+.option-list {
+    &:not(.dragging) {
+        .option {
+            &:hover {
+                .option-actions {
+                    opacity: 1;
+                }
+
+                .option-grab-handle {
+                    opacity: 1;
+                    cursor: move;
+                }
+            }
+        }
+    }
+}
+
+.option {
+    display: flex;
+    margin-bottom: 0.75rem;
+    align-items: flex-start;
+
+    &.dragging {
+        opacity: 0.7;
+
+        .option-grab-handle {
+            opacity: 1;
+        }
+    }
+
+    .option-actions,
+    .option-grab-handle {
+        height: 2rem;
+        display: flex;
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .option-actions {
+        width: 4.25rem;
+    }
+
+    .option-grab-handle {
+        width: 2rem;
+        margin-left: -0.5rem;
+        color: theme('colors.grey.500');
+    }
+
+    @screen md {
+        .option-actions,
+        .option-grab-handle {
+            opacity: 0;
+        }
+    }
+}

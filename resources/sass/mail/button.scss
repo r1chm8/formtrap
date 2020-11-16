@@ -1,0 +1,10 @@
+.button {
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    color: theme('colors.purple.500');
+    -webkit-text-size-adjust: none;
+    border: solid 1px theme('colors.purple.500');
+}

@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+    font-size: 16px;
+    min-width: 300px;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background-color: theme('colors.white');
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+    display: block;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-size: theme('fontSize.sm');
+    font-family: theme('fontFamily.sans');
+}
+
+body {
+    height: 100%;
+    color: theme('colors.grey.600');
+    line-height: theme('lineHeight.normal');
+    font-weight: theme('fontWeight.normal');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: theme('colors.black');
+    font-weight: theme('fontWeight.semibold');
+}
+
+b,
+strong {
+    font-weight: theme('fontWeight.semibold');
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: theme('colors.purple.500');
+
+    &:hover {
+        color: theme('colors.purple.600');
+    }
+}
+
+hr {
+    height: 1px;
+    background-color: theme('colors.grey.300');
+}
+
+blockquote {
+    padding: 0.75rem 1.5rem;
+    background-color: theme('colors.white');
+    border-left: 5px solid theme('colors.grey.500');
+}
+
+pre {
+    font-size: theme('fontSize.xs');
+}
+
+.pin-hidden {
+    left: -9999px;
+}

@@ -1,0 +1,25 @@
+.table table {
+    width: 100%;
+    margin: 30px auto;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.table th {
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EDEFF2;
+}
+
+.table td {
+    margin: 0;
+    font-size: 15px;
+    padding: 10px 0;
+    color: #74787E;
+    line-height: 18px;
+}
+
+.content-cell {
+    padding: 35px 50px;
+}
